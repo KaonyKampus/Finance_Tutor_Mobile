@@ -1,4 +1,4 @@
-xpackage com.kaonykk.financetutormobile
+package com.kaonykk.financetutormobile
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             FinanceTutorMobileTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "David Silva",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Hello,  $name!",
         modifier = modifier
     )
 }
