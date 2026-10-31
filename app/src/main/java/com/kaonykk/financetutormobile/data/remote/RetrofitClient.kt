@@ -6,7 +6,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 //We created an object with the const for the url
-// as wel we extend a method which come from the class 
+// as wel we extend a method which come from the class
+//it unifies all the information from healthApi and healthResponse
 
 
 object RetrofitClient {

@@ -2,13 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- we let the app be in the internet to connect to de DATABASE or use our API-->
-
+    <!-- Allows the app to access the internet to call FinanceTutorApi -->
     <uses-permission android:name="android.permission.INTERNET" />
 
-
-
-    <!-- we add an application an attribute usesCleartextTraffic to allow HTTP traffic without encrypting the data in the development locally-->
+    <!-- usesCleartextTraffic: allows unencrypted HTTP traffic for local development only -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,15 +14,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FinanceTutorMobile">
+        android:theme="@style/Theme.FinanceTutorMobile"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.FinanceTutorMobile"
-            android:windowSoftInputMode="adjustResize"
-            android:usesCleartextTraffic="true"
-            >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
