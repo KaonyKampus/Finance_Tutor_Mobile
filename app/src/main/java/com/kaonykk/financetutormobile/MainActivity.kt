@@ -19,8 +19,11 @@ class MainActivity : ComponentActivity() {
                 Surface(Modifier.fillMaxSize().safeDrawingPadding()) {
                     var user by remember { mutableStateOf<LoginResponse?>(null) }
                     val current = user
-                    if (current == null) LoginScreen(onLogin = { user = it })
-                    else HomeScreen(current)
+                    if (current == null) {
+                        LoginScreen(onLogin = { user = it })
+                    } else {
+                        MainScreen(current, onLogout = { user = null })
+                    }
                 }
             }
         }

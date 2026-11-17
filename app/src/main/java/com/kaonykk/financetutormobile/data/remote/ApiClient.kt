@@ -8,7 +8,7 @@ import java.net.CookieManager
 import java.net.CookiePolicy
 
 object ApiClient {
-    // Emulador: 10.0.2.2  ·  S23 físico: IP del Mac
+
     private const val BASE_URL = "http://192.168.0.5:8080/FinanceTutorApi/"
 
     private val cookieManager = CookieManager().apply { setCookiePolicy(CookiePolicy.ACCEPT_ALL) }

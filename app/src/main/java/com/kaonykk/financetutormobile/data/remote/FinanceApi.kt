@@ -10,9 +10,21 @@ interface FinanceApi {
     @POST("api/login")
     suspend fun login(@Body body: LoginRequest): Response<LoginResponse>
 
+    @POST("api/logout")
+    suspend fun logout(): Response<MessageResponse>
+
     @GET("api/account")
     suspend fun account(): Response<AccountResponse>
 
     @GET("api/transactions")
     suspend fun transactions(): Response<List<TransactionResponse>>
+
+    @POST("api/movements")
+    suspend fun movement(@Body body: MovementRequest): Response<MessageResponse>
+
+    @GET("api/requests")
+    suspend fun requests(): Response<List<RequestResponse>>
+
+    @POST("api/requests")
+    suspend fun decide(@Body body: DecisionRequest): Response<MessageResponse>
 }
