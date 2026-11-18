@@ -14,7 +14,8 @@ import com.kaonykk.financetutormobile.data.model.LoginResponse
 fun MainScreen(user: LoginResponse, onLogout: () -> Unit) {
     val tabs = when (user.role) {
         "PRINCIPAL" -> listOf("Inicio" to "🏠", "Solicitudes" to "🔔", "Reportes" to "📊", "Perfil" to "👤")
-        "TUTOR" -> listOf("Aprobaciones" to "✅", "Perfil" to "👤")
+        "TUTOR" -> listOf("Aprobaciones" to "✅", "Presupuestos" to "💰", "Perfil" to "👤")
+        "ADMIN" -> listOf("Registrar" to "➕", "Vincular" to "🔗", "Perfil" to "👤")
         else -> listOf("Perfil" to "👤")
     }
     var selected by remember { mutableIntStateOf(0) }
@@ -43,6 +44,9 @@ fun MainScreen(user: LoginResponse, onLogout: () -> Unit) {
                 "Solicitudes" -> RequestsScreen()
                 "Reportes" -> ReportsScreen()
                 "Aprobaciones" -> ApprovalsScreen()
+                "Presupuestos" -> BudgetsScreen()
+                "Registrar" -> RegisterUserScreen()
+                "Vincular" -> AssignScreen()
                 else -> ProfileScreen(user, onLogout)
             }
         }

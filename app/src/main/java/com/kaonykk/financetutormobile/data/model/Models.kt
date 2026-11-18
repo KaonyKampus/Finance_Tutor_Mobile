@@ -25,3 +25,11 @@ data class RequestResponse(
 data class DecisionRequest(val requestId: Long, val action: String)
 
 data class MessageResponse(val message: String?, val error: String?)
+
+data class LimitRequest(val accountId: Long, val dailyLimit: Double)
+
+data class UserResponse(val id: Long, val name: String, val email: String, val role: String)
+
+data class RegisterRequest(val name: String, val email: String, val password: String, val role: String)
+
+data class AssignmentRequest(val tutorId: Long, val principalId: Long)

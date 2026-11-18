@@ -5,6 +5,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface FinanceApi {
     @POST("api/login")
@@ -27,4 +28,19 @@ interface FinanceApi {
 
     @POST("api/requests")
     suspend fun decide(@Body body: DecisionRequest): Response<MessageResponse>
+
+    @GET("api/wards")
+    suspend fun wards(): Response<List<AccountResponse>>
+
+    @POST("api/wards")
+    suspend fun updateLimit(@Body body: LimitRequest): Response<MessageResponse>
+
+    @GET("api/admin/users")
+    suspend fun users(@Query("role") role: String): Response<List<UserResponse>>
+
+    @POST("api/admin/users")
+    suspend fun register(@Body body: RegisterRequest): Response<MessageResponse>
+
+    @POST("api/admin/assignments")
+    suspend fun assign(@Body body: AssignmentRequest): Response<MessageResponse>
 }
